@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraTwin - Personal Intelligence Companion</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-header">
+    <div class="brand-group">
+      <div class="logo-mark">A</div>
+      <div>
+        <h1 class="brand-title">AuraTwin</h1>
+        <p class="brand-tagline">Zero-Typing Personal Intelligence &bull; Track 3: Know Thyself</p>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="status-badge vault-badge">
+        <span class="pulse-dot"></span>
+        <span>AWS S3 Vault: Isolated &amp; Encrypted</span>
+      </div>
+      <div class="status-badge storage-badge" id="storageIndicator">
+        Storage: 0 KB
+      </div>
+      <button class="btn btn-danger" id="wipeDataBtn">
+        1-Click Delete All My Data
+      </button>
+    </div>
+  </header>
+
+  <main class="dashboard-grid">
+    <section class="panel capture-panel">
+      <div class="panel-header">
+        <h2>Zero-Typing Capture</h2>
+        <span class="badge">Input &amp; Ingestion Layer</span>
+      </div>
+
+      <div class="panel-content">
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" accept="image/*" class="file-input-hidden">
+          <div class="drop-zone-icon">&uarr;</div>
+          <p class="drop-zone-text"><strong>Drag &amp; drop smartwatch or screen-time screenshot</strong></p>
+          <p class="drop-zone-sub">or click to browse local files (NoiseFit, boAt, Apple Health, Wellbeing)</p>
+        </div>
+
+        <div class="pipeline-card" id="pipelineCard">
+          <div class="pipeline-title">3-Stage Ingestion Pipeline</div>
+          <div class="pipeline-stages">
+            <div class="stage-step" id="stage1">
+              <span class="stage-num">1</span>
+              <span class="stage-name">S3 Encrypted Vault</span>
+              <span class="stage-status" id="stage1Status">Idle</span>
+            </div>
+            <div class="stage-step" id="stage2">
+              <span class="stage-num">2</span>
+              <span class="stage-name">Lambda PII Sanitizer</span>
+              <span class="stage-status" id="stage2Status">Idle</span>
+            </div>
+            <div class="stage-step" id="stage3">
+              <span class="stage-num">3</span>
+              <span class="stage-name">Tesseract.js OCR</span>
+              <span class="stage-status" id="stage3Status">Idle</span>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="ocrProgressBar"></div>
+          </div>
+          <div class="ocr-status-text" id="ocrStatusText">Waiting for screenshot input...</div>
+        </div>
+
+        <div class="demo-section">
+          <label class="section-label">One-Click Sample Screenshots (Demo Mode)</label>
+          <div class="sample-grid">
+            <button class="sample-card" id="sampleSleepBtn">
+              <span class="sample-icon">&#128336;</span>
+              <div class="sample-info">
+                <strong>Smartwatch Sleep</strong>
+                <small>5h 42m total sleep &bull; 48 bpm RHR</small>
+              </div>
+            </button>
+            <button class="sample-card" id="sampleScreenBtn">
+              <span class="sample-icon">&#128241;</span>
+              <div class="sample-info">
+                <strong>Screen-Time Dashboard</strong>
+                <small>6h 50m daily &bull; 2h 20m late night</small>
+              </div>
+            </button>
+            <button class="sample-card" id="sampleHabitBtn">
+              <span class="sample-icon">&#9749;</span>
+              <div class="sample-info">
+                <strong>Late-Night Habit Log</strong>
+                <small>12:45 AM activity flag &bull; 3,100 steps</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="voice-input-section">
+          <label class="section-label">5-Second Voice Notes</label>
+          <div class="voice-recorder-bar">
+            <button class="mic-btn" id="micBtn">
+              <span class="mic-icon">&#127908;</span>
+              <span id="micLabel">Tap to Speak</span>
+            </button>
+            <span class="rec-indicator" id="recIndicator"></span>
+          </div>
+          <div class="voice-transcript-box" id="transcriptBox">
+            Speak a quick note (e.g., "Felt exhausted after morning lab today") or tap a chip below.
+          </div>
+          <div class="demo-chips">
+            <button class="demo-chip" data-speech="Felt exhausted after morning lab today with low focus.">"Felt exhausted after morning lab"</button>
+            <button class="demo-chip" data-speech="Had strong cold brew espresso at 11 PM while coding assignments.">"Had espresso at 11 PM"</button>
+            <button class="demo-chip" data-speech="Took a 20-minute sunset walk and felt energised before bed.">"Took sunset walk and felt energized"</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel insights-panel">
+      <div class="panel-header">
+        <h2>Health &amp; Correlation Insights</h2>
+        <span class="badge">Amazon Bedrock Reasoning Engine</span>
+      </div>
+
+      <div class="panel-content">
+        <div class="readiness-card">
+          <div class="readiness-score-wrap">
+            <div class="score-circle" id="scoreCircle">
+              <span class="score-value" id="readinessScoreVal">68</span>
+              <span class="score-unit">/100</span>
+            </div>
+          </div>
+          <div class="readiness-meta">
+            <div class="readiness-status" id="readinessStatus">Moderate Readiness</div>
+            <p class="readiness-sub" id="readinessSub">Cross-domain correlation shows late-night light exposure impacting recovery phase.</p>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon">&#127769;</div>
+            <div class="metric-body">
+              <span class="metric-label">Sleep Duration</span>
+              <span class="metric-val" id="sleepMetric">5.7 hrs</span>
+              <span class="metric-delta delta-down" id="sleepDelta">-1.3h vs target</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">&#128099;</div>
+            <div class="metric-body">
+              <span class="metric-label">Daily Movement</span>
+              <span class="metric-val" id="stepsMetric">4,820</span>
+              <span class="metric-delta" id="stepsDelta">steps logged</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">&#128241;</div>
+            <div class="metric-body">
+              <span class="metric-label">Late-Night Screen</span>
+              <span class="metric-val" id="screenMetric">2.3 hrs</span>
+              <span class="metric-delta delta-warn" id="screenDelta">after 10:30 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="correlation-banner" id="correlationBanner">
+          <div class="correlation-header">
+            <span class="sparkle-icon">&#10024;</span>
+            <strong>Bedrock Cause-and-Effect Discovery</strong>
+          </div>
+          <p class="correlation-text" id="correlationText">
+            Late-night phone scrolling past 11:00 PM correlates directly with a 38% reduction in restorative deep sleep and elevated resting heart rate this morning.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>7-Day Cross-Domain Trend</h3>
+            <span class="chart-legend-tag">Sleep Hours vs. Late-Night Screen</span>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel coach-panel">
+      <div class="panel-header">
+        <h2>Voice Coach &amp; Timeline</h2>
+        <span class="badge">ElevenLabs Voice &bull; DynamoDB</span>
+      </div>
+
+      <div class="panel-content">
+        <div class="briefing-card">
+          <div class="briefing-header">
+            <div class="briefing-title-group">
+              <span class="audio-chip">60s Briefing</span>
+              <h3>Morning Voice Briefing</h3>
+            </div>
+            <button class="btn btn-primary" id="playBriefingBtn">
+              &#9654; Play Briefing
+            </button>
+          </div>
+
+          <div class="waveform-container">
+            <canvas id="waveformCanvas" width="400" height="60"></canvas>
+          </div>
+
+          <p class="briefing-script" id="briefingScript">
+            "Good morning. Your readiness score is 68 today. Last night's 2.3 hours of late screen time shortened your deep sleep cycle by 45 minutes. Try capping screen usage by 10:30 PM tonight to recharge before your 8 AM schedule."
+          </p>
+        </div>
+
+        <div class="alert-card">
+          <div class="alert-icon">&#9200;</div>
+          <div class="alert-content">
+            <strong>Actionable Bedtime &amp; Break Nudge</strong>
+            <p id="alertText">Set a wind-down reminder for 10:30 PM tonight to recover 45 minutes of sleep debt.</p>
+          </div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-header">
+            <h3>Chronological Event Vault</h3>
+            <span class="vault-tag">DynamoDB Timeline</span>
+          </div>
+          <div class="timeline-stream" id="timelineStream">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
