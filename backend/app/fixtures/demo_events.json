@@ -1,0 +1,637 @@
+[
+  {
+    "event_type": "expense",
+    "title": "College Canteen Lunch",
+    "timestamp": "2026-11-01T13:15:00",
+    "amount": 80.0,
+    "category": "food",
+    "merchant": "RVCE Canteen",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "study",
+    "title": "OS Process Scheduling Review",
+    "timestamp": "2026-11-01T17:00:00",
+    "duration_minutes": 120,
+    "subject": "Operating Systems",
+    "status": "completed",
+    "source": "study_timer",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "sleep",
+    "title": "Night Sleep",
+    "timestamp": "2026-11-01T23:30:00",
+    "duration_minutes": 450,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "class",
+    "title": "Operating Systems Lecture",
+    "timestamp": "2026-11-02T08:30:00",
+    "subject": "Operating Systems",
+    "status": "attended",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Zomato Biryani",
+    "timestamp": "2026-11-02T23:45:00",
+    "amount": 290.0,
+    "category": "food",
+    "merchant": "Zomato - Meghana Foods",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Disrupted Late Sleep",
+    "timestamp": "2026-11-03T02:45:00",
+    "duration_minutes": 290,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.92
+  },
+  {
+    "event_type": "class",
+    "title": "DBMS Relational Algebra",
+    "timestamp": "2026-11-03T08:30:00",
+    "subject": "DBMS",
+    "status": "missed",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Uber Auto to College (Overslept)",
+    "timestamp": "2026-11-03T09:40:00",
+    "amount": 140.0,
+    "category": "transit",
+    "merchant": "Uber",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.97
+  },
+  {
+    "event_type": "study",
+    "title": "DBMS SQL Practice (Fatigued)",
+    "timestamp": "2026-11-03T18:00:00",
+    "duration_minutes": 35,
+    "subject": "DBMS",
+    "status": "abandoned",
+    "source": "study_timer",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "sleep",
+    "title": "Night Sleep",
+    "timestamp": "2026-11-03T23:15:00",
+    "duration_minutes": 465,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "class",
+    "title": "Computer Networks Lecture",
+    "timestamp": "2026-11-04T10:00:00",
+    "subject": "Networks",
+    "status": "attended",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Stationery & Lab Records",
+    "timestamp": "2026-11-04T16:30:00",
+    "amount": 220.0,
+    "category": "academic",
+    "merchant": "Campus Xerox & Book Depo",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Swiggy Shawarma",
+    "timestamp": "2026-11-05T23:35:00",
+    "amount": 240.0,
+    "category": "food",
+    "merchant": "Swiggy - Empire Restaurant",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Late Bedtime Sleep",
+    "timestamp": "2026-11-06T02:30:00",
+    "duration_minutes": 300,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.94
+  },
+  {
+    "event_type": "class",
+    "title": "Operating Systems Virtual Memory",
+    "timestamp": "2026-11-06T08:30:00",
+    "subject": "Operating Systems",
+    "status": "late",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Morning Canteen Red Bull & Puffs",
+    "timestamp": "2026-11-06T09:15:00",
+    "amount": 160.0,
+    "category": "food",
+    "merchant": "Nescafe Kiosk",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.96
+  },
+  {
+    "event_type": "study",
+    "title": "OS Memory Management Planning",
+    "timestamp": "2026-11-06T19:00:00",
+    "duration_minutes": 40,
+    "subject": "Operating Systems",
+    "status": "abandoned",
+    "source": "study_timer",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "expense",
+    "title": "Weekend Amazon Engineering Notebook",
+    "timestamp": "2026-11-07T14:20:00",
+    "amount": 350.0,
+    "category": "shopping",
+    "merchant": "Amazon Pay",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "sleep",
+    "title": "Weekend Recovery Sleep",
+    "timestamp": "2026-11-07T23:50:00",
+    "duration_minutes": 510,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "expense",
+    "title": "Sunday Canteen Lunch with Friends",
+    "timestamp": "2026-11-08T13:30:00",
+    "amount": 190.0,
+    "category": "food",
+    "merchant": "RVCE Canteen",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Zomato Loaded Burgers",
+    "timestamp": "2026-11-08T23:55:00",
+    "amount": 380.0,
+    "category": "food",
+    "merchant": "Zomato - Truffles",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Heavy Late Sleep",
+    "timestamp": "2026-11-09T03:00:00",
+    "duration_minutes": 270,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.92
+  },
+  {
+    "event_type": "class",
+    "title": "Mathematics IV Calculus",
+    "timestamp": "2026-11-09T08:30:00",
+    "subject": "Mathematics",
+    "status": "missed",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Uber Ride to Lab",
+    "timestamp": "2026-11-09T10:15:00",
+    "amount": 135.0,
+    "category": "transit",
+    "merchant": "Uber",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "study",
+    "title": "OS Deadlock Handling",
+    "timestamp": "2026-11-09T16:30:00",
+    "duration_minutes": 45,
+    "subject": "Operating Systems",
+    "status": "completed",
+    "source": "study_timer",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "sleep",
+    "title": "Night Sleep",
+    "timestamp": "2026-11-09T23:00:00",
+    "duration_minutes": 470,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.96
+  },
+  {
+    "event_type": "class",
+    "title": "Database Systems SQL Lab",
+    "timestamp": "2026-11-10T08:30:00",
+    "subject": "DBMS",
+    "status": "attended",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Canteen Thali",
+    "timestamp": "2026-11-10T13:00:00",
+    "amount": 90.0,
+    "category": "food",
+    "merchant": "RVCE Canteen",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Swiggy Midnight Snack",
+    "timestamp": "2026-11-11T23:20:00",
+    "amount": 220.0,
+    "category": "food",
+    "merchant": "Swiggy - Chai Point",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Late Bedtime Sleep",
+    "timestamp": "2026-11-12T02:15:00",
+    "duration_minutes": 310,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.93
+  },
+  {
+    "event_type": "class",
+    "title": "Operating Systems File Systems",
+    "timestamp": "2026-11-12T08:30:00",
+    "subject": "Operating Systems",
+    "status": "missed",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Amazon Tech Accessories (USB-C Hub)",
+    "timestamp": "2026-11-12T15:00:00",
+    "amount": 499.0,
+    "category": "shopping",
+    "merchant": "Amazon Pay",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "study",
+    "title": "OS Mid-Term Prep Chapter 3",
+    "timestamp": "2026-11-12T18:00:00",
+    "duration_minutes": 30,
+    "subject": "Operating Systems",
+    "status": "abandoned",
+    "source": "study_timer",
+    "confidence_score": 0.94
+  },
+  {
+    "event_type": "sleep",
+    "title": "Night Sleep",
+    "timestamp": "2026-11-12T23:40:00",
+    "duration_minutes": 440,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "class",
+    "title": "Computer Networks Routing",
+    "timestamp": "2026-11-13T10:00:00",
+    "subject": "Networks",
+    "status": "attended",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Canteen Evening Snacks & Coffee",
+    "timestamp": "2026-11-13T17:15:00",
+    "amount": 75.0,
+    "category": "food",
+    "merchant": "Nescafe Kiosk",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Zomato Noodles & Roll",
+    "timestamp": "2026-11-14T23:50:00",
+    "amount": 310.0,
+    "category": "food",
+    "merchant": "Zomato - Beijing Bites",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Late Sleep",
+    "timestamp": "2026-11-15T02:50:00",
+    "duration_minutes": 280,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.91
+  },
+  {
+    "event_type": "class",
+    "title": "DBMS Transaction Management",
+    "timestamp": "2026-11-15T08:30:00",
+    "subject": "DBMS",
+    "status": "late",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Uber Go Ride to College",
+    "timestamp": "2026-11-15T09:10:00",
+    "amount": 165.0,
+    "category": "transit",
+    "merchant": "Uber",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "study",
+    "title": "DBMS Normalization Practice",
+    "timestamp": "2026-11-15T16:00:00",
+    "duration_minutes": 50,
+    "subject": "DBMS",
+    "status": "completed",
+    "source": "study_timer",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "sleep",
+    "title": "Regular Sleep",
+    "timestamp": "2026-11-15T23:10:00",
+    "duration_minutes": 475,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.97
+  },
+  {
+    "event_type": "expense",
+    "title": "Canteen Meals & Juice",
+    "timestamp": "2026-11-16T13:10:00",
+    "amount": 110.0,
+    "category": "food",
+    "merchant": "RVCE Canteen",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Swiggy Biryani Bowl",
+    "timestamp": "2026-11-16T23:30:00",
+    "amount": 260.0,
+    "category": "food",
+    "merchant": "Swiggy - Behrouz Biryani",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Disrupted Sleep",
+    "timestamp": "2026-11-17T02:40:00",
+    "duration_minutes": 290,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.92
+  },
+  {
+    "event_type": "class",
+    "title": "Operating Systems Synchronization",
+    "timestamp": "2026-11-17T08:30:00",
+    "subject": "Operating Systems",
+    "status": "missed",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "study",
+    "title": "OS Semaphores & Mutex (Planned 120m)",
+    "timestamp": "2026-11-17T17:00:00",
+    "duration_minutes": 25,
+    "subject": "Operating Systems",
+    "status": "abandoned",
+    "source": "study_timer",
+    "confidence_score": 0.93
+  },
+  {
+    "event_type": "expense",
+    "title": "Amazon Course Reference Guide",
+    "timestamp": "2026-11-18T11:30:00",
+    "amount": 340.0,
+    "category": "academic",
+    "merchant": "Amazon Pay",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "expense",
+    "title": "Late Night Zomato Pizza Mania",
+    "timestamp": "2026-11-18T23:40:00",
+    "amount": 320.0,
+    "category": "food",
+    "merchant": "Zomato - Domino's Pizza",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Short Sleep",
+    "timestamp": "2026-11-19T02:30:00",
+    "duration_minutes": 310,
+    "status": "low_sleep",
+    "source": "sleep_tracker",
+    "confidence_score": 0.93
+  },
+  {
+    "event_type": "class",
+    "title": "Mathematics IV Statistics",
+    "timestamp": "2026-11-19T08:30:00",
+    "subject": "Mathematics",
+    "status": "missed",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Uber Auto to College",
+    "timestamp": "2026-11-19T10:30:00",
+    "amount": 130.0,
+    "category": "transit",
+    "merchant": "Uber",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "study",
+    "title": "DBMS B+ Trees Review",
+    "timestamp": "2026-11-19T19:00:00",
+    "duration_minutes": 60,
+    "subject": "DBMS",
+    "status": "completed",
+    "source": "study_timer",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "sleep",
+    "title": "Night Sleep",
+    "timestamp": "2026-11-19T23:30:00",
+    "duration_minutes": 460,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.96
+  },
+  {
+    "event_type": "expense",
+    "title": "Canteen Meals & Tea",
+    "timestamp": "2026-11-20T13:00:00",
+    "amount": 85.0,
+    "category": "food",
+    "merchant": "RVCE Canteen",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "expense",
+    "title": "Swiggy Late Snack",
+    "timestamp": "2026-11-20T23:15:00",
+    "amount": 180.0,
+    "category": "food",
+    "merchant": "Swiggy - Chai Point",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "sleep",
+    "title": "Sleep",
+    "timestamp": "2026-11-21T01:30:00",
+    "duration_minutes": 380,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.95
+  },
+  {
+    "event_type": "study",
+    "title": "OS Mid-Term Review Session",
+    "timestamp": "2026-11-21T16:00:00",
+    "duration_minutes": 45,
+    "subject": "Operating Systems",
+    "status": "abandoned",
+    "source": "study_timer",
+    "confidence_score": 0.94
+  },
+  {
+    "event_type": "expense",
+    "title": "Weekend Grocery & Maggi",
+    "timestamp": "2026-11-22T12:00:00",
+    "amount": 280.0,
+    "category": "food",
+    "merchant": "Zepto",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.99
+  },
+  {
+    "event_type": "sleep",
+    "title": "Sleep",
+    "timestamp": "2026-11-22T23:45:00",
+    "duration_minutes": 450,
+    "status": "completed",
+    "source": "sleep_tracker",
+    "confidence_score": 0.97
+  },
+  {
+    "event_type": "class",
+    "title": "Computer Networks Lab",
+    "timestamp": "2026-11-23T10:00:00",
+    "subject": "Networks",
+    "status": "attended",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "expense",
+    "title": "Canteen Lunch",
+    "timestamp": "2026-11-23T13:30:00",
+    "amount": 95.0,
+    "category": "food",
+    "merchant": "RVCE Canteen",
+    "status": "completed",
+    "source": "upi_sms",
+    "confidence_score": 0.98
+  },
+  {
+    "event_type": "deadline",
+    "title": "DBMS Assignment 2: Normalization & Indexing",
+    "timestamp": "2026-11-26T23:59:00",
+    "subject": "DBMS",
+    "status": "pending",
+    "source": "calendar",
+    "confidence_score": 1.0
+  },
+  {
+    "event_type": "deadline",
+    "title": "Operating Systems Mid-Term Exam (40% Weightage)",
+    "timestamp": "2026-11-30T09:30:00",
+    "subject": "Operating Systems",
+    "status": "pending",
+    "source": "calendar",
+    "confidence_score": 1.0
+  }
+]
