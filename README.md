@@ -1,5 +1,6 @@
 # AURA: Your Voice-First Personal Data Twin
-> **Hackathon Track 3: Know Thyself : The Bug Dealers**  
+> **Hackathon Track 3: Know Thyself | Team: The Bug Dealers**
+> **Members:** Soham Manjunath, Syeda Kulsum, Shreya B R, Saathvik R
 > *A proactive, predictive personal intelligence twin for college students. Multi-variable correlation across finances, circadian sleep, attendance, and exam deadlines.*
 
 ---
@@ -12,8 +13,7 @@ Most AI student tools are **passive "chat with your PDF" wrappers**—they only 
 - **Proactive & Predictive:** AURA continuously watches time-series data across scattered student silos (UPI spends, sleep logs, class timetable, study sessions, and exam deadlines).
 - **Finds Non-Obvious Cause-and-Effect Loops:** It doesn't just tell you that you're low on money; it proves that **₹1,840 in midnight Zomato orders delayed your sleep to 2:45 AM**, directly causing you to **miss 5 mandatory 8:30 AM lectures** and fall behind on your **Operating Systems Mid-Term prep**.
 - **Voice-First Interaction:** Delivers an autonomous **60-second morning briefing** every day and answers prospective **"What-If"** questions with transparent reasoning chains.
-- **100% Local & Sovereign:** Runs locally with **zero API keys required**, storing data in local SQLite with one-click data erasure.
-
+- **Privacy-First by Design:** The prototype runs locally with **zero API keys required**, storing data in local SQLite with one-click data erasure. Cloud services are optional via `AURA_MODE=live`.
 ---
 
 ## 🏛️ System Architecture
@@ -68,7 +68,7 @@ graph TD
 ## 📁 Repository Structure
 
 ```text
-twin/
+Root/
 ├── README.md                      # Comprehensive guide, architecture & demo script
 ├── .env.example                   # Environment variable template
 ├── run.bat                        # Windows 1-click startup script (concurrent servers)
@@ -206,7 +206,7 @@ $env:PYTHONPATH="."; venv\Scripts\python -m pytest -v
 # Linux/macOS:
 PYTHONPATH=. venv/bin/pytest -v
 ```
-**Test Results:**
+**What the tests cover:**
 - `test_detectors.py`: Verifies pure-function detectors for late-night spend chain, budget burn projection, and sleep deficit.
 - `test_whatif.py`: Verifies transparent reasoning and risk score calculations for multiple student scenarios.
 - `test_api_endpoints.py`: Tests all 9 HTTP endpoints (health, events, insights, budget, briefing, whatif, file ingestion, text ingestion, privacy wipe & re-seed).
@@ -217,16 +217,21 @@ PYTHONPATH=. venv/bin/pytest -v
 
 AURA uses an **Abstract Base Class Adapter Pattern** controlled via the environment variable `AURA_MODE=mock|live` (default: `mock`):
 
-| Component | In Mock Mode (`AURA_MODE=mock`) | In Live Mode (`AURA_MODE=live`) |
+| Component | Mock Mode (`AURA_MODE=mock`, default) | Live Mode (`AURA_MODE=live`) |
 | :--- | :--- | :--- |
-| **LLM Reasoning & Script** | `TemplateLLMService`: Pure-code template engine that parses intent with regex/keywords, evaluates actual student events from SQLite, and produces transparent reasoning chains. | `BedrockLLMService`: Connects to AWS Bedrock Anthropic Claude using `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. |
-| **Speech Output (TTS)** | **Browser Web Speech API (`SpeechSynthesis`)**: Zero latency, 100% free, runs client-side in Google Chrome / Edge / Safari without downloading audio files. | `ElevenLabsVoiceService`: Calls ElevenLabs API if `ELEVENLABS_API_KEY` is provided to generate studio-quality MP3 audio. |
-| **Speech Input (STT)** | **Browser Web Speech API (`SpeechRecognition`)**: Native on-device speech-to-text with Indian English (`en-IN`) acoustic models. | Whisper / Cloud STT via backend. |
-| **Document Ingestion** | `mock_extractor.py`: Inspects uploaded document name and content type, simulating realistic OCR extraction with confidence scores (e.g. UPI transaction ID, merchant, timestamp). | Amazon Textract / Claude 3.5 Sonnet Vision OCR. |
-| **Natural Language Notes** | `note_parser.py`: Fast regex & heuristic extractor mapping phrases like `"Spent 120 on snacks after late lab"` to typed `LifeEvent` objects with category tagging. | LLM Function Calling / Structured Outputs. |
+| **LLM Reasoning & Script** | `TemplateLLMService`: template engine that parses intent with regex/keywords, evaluates real student events from SQLite, and produces transparent reasoning chains. | `BedrockLLMService`: adapter stub for AWS Bedrock (Claude). *Integration in progress.* |
+| **Speech Output (TTS)** | Browser Web Speech API (`SpeechSynthesis`): zero latency, free, runs client-side. | `ElevenLabsVoiceService`: generates studio-quality audio when `ELEVENLABS_API_KEY` is set. |
+| **Speech Input (STT)** | Browser Web Speech API (`SpeechRecognition`, `en-IN`). | *Planned:* ElevenLabs Speech-to-Text via backend. |
+| **Document Ingestion** | `mock_extractor.py`: simulates OCR on uploaded files and returns realistic parsed events with confidence scores. | *Planned:* real OCR via AWS Lambda + Bedrock vision. |
+| **Natural Language Notes** | `note_parser.py`: regex/heuristic extractor mapping phrases like `"Spent 120 on snacks after late lab"` to typed events. | *Planned:* LLM structured outputs. |
 
 ---
-- **Zero Cloud Storage:** All UPI details, attendance records, and sleep logs reside exclusively on the user's device in SQLite (`backend/aura.db`).
+
+## 🔒 Privacy
+
+> The prototype runs fully local for demo reliability. The adapter layer is built so AWS (S3 / Lambda / Bedrock) and ElevenLabs plug in with `AURA_MODE=live`. In a cloud deployment, uploads would go to encrypted per-user S3 storage.
+
+- **Local-First in the Prototype:** All UPI details, attendance records, and sleep logs reside on the user's device in SQLite (`backend/aura.db`).
 - **No Third-Party Telemetry:** Speech recognition and speech synthesis execute via the client-side W3C Web Speech API inside the browser.
 - **One-Click Erase:** Full compliance with the "Right to be Forgotten" via `DELETE /api/privacy/wipe`.
 
