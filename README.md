@@ -1,5 +1,5 @@
 # AURA: Your Voice-First Personal Data Twin
-> **Hackathon Track 3: Know Thyself**  
+> **Hackathon Track 3: Know Thyself : The Bug Dealers**  
 > *A proactive, predictive personal intelligence twin for college students. Multi-variable correlation across finances, circadian sleep, attendance, and exam deadlines.*
 
 ---
