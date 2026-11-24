@@ -69,7 +69,7 @@ graph TD
 
 ```text
 Root/
-├── README.md                      # Comprehensive guide, architecture & demo script
+├── README.md                      # Comprehensive guide, architecture 
 ├── .env.example                   # Environment variable template
 ├── run.bat                        # Windows 1-click startup script (concurrent servers)
 ├── run.sh                         # Linux/macOS bash startup script
